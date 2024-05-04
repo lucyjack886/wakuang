@@ -10,7 +10,7 @@ install_docker() {
         sudo systemctl start docker
         sudo systemctl enable docker
     # Ubuntu 安装 Docker
-    elif [ -f /etc/lsb-release ]; then
+    elif [ -f /etc/debian_version ] || [ -f /etc/lsb-release ]; then
         sudo apt-get update
         sudo apt-get install -y docker.io
         sudo systemctl start docker
